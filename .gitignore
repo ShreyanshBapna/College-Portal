@@ -7,6 +7,9 @@ yarn-error.log*
 package-lock.json
 yarn.lock
 
+# Frontend folder (excluded from tracking)
+frontend/
+
 # Environment variables
 .env
 .env.local
