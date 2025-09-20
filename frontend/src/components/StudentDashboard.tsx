@@ -135,8 +135,8 @@ const StudentDashboard: React.FC = () => {
           </div>
         </Card>
 
-        {/* Stats Grid - Mobile: 2 cols, Tablet: 3 cols, Desktop: 6 cols */}
-        <ResponsiveGrid cols={{ mobile: 2, tablet: 3, desktop: 6 }} gap="md">
+        {/* Stats Grid - Mobile: 2 cols, Tablet: 3 cols, Desktop: 4 cols */}
+        <ResponsiveGrid cols={{ mobile: 2, tablet: 3, desktop: 4 }} gap="md">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}

@@ -181,7 +181,7 @@ const PrincipalDashboard: React.FC = () => {
         </motion.div>
 
         {/* Stats Grid */}
-        <ResponsiveGrid cols={{ mobile: 2, tablet: 3, desktop: 6 }} gap="md">
+        <ResponsiveGrid cols={{ mobile: 2, tablet: 3, desktop: 4 }} gap="md">
           {stats.map((stat) => (
             <StatCard
               key={stat.label}
