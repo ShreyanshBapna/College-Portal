@@ -14,6 +14,7 @@ import LoadingScreen from './components/LoadingScreen';
 import ErrorBoundary from './components/ErrorBoundary';
 import ConnectionStatus from './components/ConnectionStatus';
 import ResponsiveTest from './components/ResponsiveTest';
+import QuickAuthTest from './components/QuickAuthTest';
 import useSocket from './hooks/useSocket';
 import './App.css';
 
@@ -85,6 +86,7 @@ const AppContent: React.FC = () => {
               <Route path="/register" element={<RegisterForm />} />
               <Route path="/chat" element={<ChatApp />} />
               <Route path="/test" element={<ResponsiveTest />} />
+              <Route path="/auth-test" element={<QuickAuthTest />} />
               <Route path="/unauthorized" element={<UnauthorizedPage />} />
               
               {/* Protected dashboard route */}
