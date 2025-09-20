@@ -13,6 +13,7 @@ import ChatApp from './components/ChatApp';
 import LoadingScreen from './components/LoadingScreen';
 import ErrorBoundary from './components/ErrorBoundary';
 import ConnectionStatus from './components/ConnectionStatus';
+import ResponsiveTest from './components/ResponsiveTest';
 import useSocket from './hooks/useSocket';
 import './App.css';
 
@@ -83,6 +84,7 @@ const AppContent: React.FC = () => {
               <Route path="/login" element={<LoginForm />} />
               <Route path="/register" element={<RegisterForm />} />
               <Route path="/chat" element={<ChatApp />} />
+              <Route path="/test" element={<ResponsiveTest />} />
               <Route path="/unauthorized" element={<UnauthorizedPage />} />
               
               {/* Protected dashboard route */}
