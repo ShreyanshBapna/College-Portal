@@ -11,6 +11,8 @@
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
     "seed": "ts-node src/scripts/seedFAQs.ts",
+    "seed:users": "ts-node src/scripts/seedAllUsers.ts",
+    "seed:all": "npm run seed && npm run seed:users",
     "clean": "rimraf dist",
     "postbuild": "npm run clean && tsc"
   },
