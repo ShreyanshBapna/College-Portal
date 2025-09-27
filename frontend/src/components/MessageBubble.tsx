@@ -21,8 +21,8 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
 
   const getConfidenceColor = (confidence?: number) => {
     if (!confidence) return '';
-    if (confidence >= 0.8) return 'text-green-600';
-    if (confidence >= 0.6) return 'text-yellow-600';
+    if (confidence >= 80) return 'text-green-600';
+    if (confidence >= 60) return 'text-yellow-600';
     return 'text-red-600';
   };
 
@@ -125,7 +125,7 @@ const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
                   className={`font-semibold px-2 py-1 rounded-full ${getConfidenceColor(message.confidence)} bg-white/50`}
                   whileHover={{ scale: 1.05 }}
                 >
-                  Confidence: {Math.round(message.confidence * 100)}%
+                  Confidence: {Math.round(message.confidence)}%
                 </motion.span>
                 {message.intent && (
                   <motion.span 

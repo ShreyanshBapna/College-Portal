@@ -18,6 +18,7 @@ import analyticsRoutes from './routes/analytics';
 import authRoutes from './routes/authRoutes';
 import dashboardRoutes from './routes/dashboardRoutes';
 import profileRoutes from './routes/profile';
+import ragRoutes from './routes/rag';
 
 // Load environment variables
 dotenv.config();
@@ -70,7 +71,7 @@ app.use(limiter);
 app.get('/health', (req, res) => {
   res.status(200).json({
     status: 'OK',
-    message: 'SIH Multilingual Chatbot Backend is running',
+    message: 'Saarthi - JECRC Chatbot Backend is running',
     timestamp: new Date().toISOString(),
     environment: process.env.NODE_ENV || 'development'
   });
@@ -83,6 +84,7 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/profile', profileRoutes);
+app.use('/api/rag', ragRoutes);
 
 // Socket.IO for real-time chat with enhanced connection handling
 io.on('connection', (socket) => {
@@ -90,7 +92,7 @@ io.on('connection', (socket) => {
 
   // Send welcome message with connection confirmation
   socket.emit('welcome', {
-    message: 'Connected to JECRC Foundation Chat Assistant',
+    message: 'Connected to Saarthi - JECRC Chatbot',
     timestamp: new Date().toISOString(),
     socketId: socket.id
   });
@@ -375,7 +377,7 @@ async function startServer() {
   try {
     await connectDatabase();
     server.listen(PORT, () => {
-      logger.info(`🚀 SIH Multilingual Chatbot Backend running on port ${PORT}`);
+      logger.info(`🚀 Saarthi - JECRC Chatbot Backend running on port ${PORT}`);
       logger.info(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
       logger.info(`📱 Frontend URL: ${process.env.FRONTEND_URL || 'http://localhost:3000'}`);
     });

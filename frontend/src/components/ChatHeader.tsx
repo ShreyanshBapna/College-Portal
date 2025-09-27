@@ -65,7 +65,7 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              SIH Multilingual Campus Assistant
+              Saarthi - JECRC Chatbot
             </motion.h1>
           </div>
           

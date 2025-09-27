@@ -105,7 +105,7 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({ messages, isLoading }) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.6 }}
               >
-                Welcome to SIH Multilingual Campus Assistant
+                Welcome to Saarthi - JECRC Chatbot
               </motion.h3>
               
               <motion.p 

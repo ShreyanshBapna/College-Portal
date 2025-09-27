@@ -1,0 +1,86 @@
+{
+  "greeting": {
+    "keywords": ["hello", "hi", "hey", "namaste", "नमस्ते", "हैलो", "good morning", "good evening"],
+    "responses": {
+      "hi": "नमस्ते! मैं JECRC का intelligent assistant हूँ। मैं आपसे बिल्कुल natural conversation कर सकता हूँ - जैसे किसी दोस्त या counselor से बात करते हैं। आप कुछ भी पूछ सकते हैं, मैं detail में समझाऊंगा।",
+      "en": "Hello! I'm JECRC's intelligent assistant. I can have completely natural conversations with you - just like talking to a friend or counselor. Ask me anything, and I'll explain in detail."
+    }
+  },
+  "thanks": {
+    "keywords": ["thank", "thanks", "dhanyawad", "धन्यवाद", "शुक्रिया"],
+    "responses": {
+      "hi": "बिल्कुल कोई बात नहीं! मुझे खुशी होती है जब मैं आपकी help कर पाता हूँ। अगर कोई और doubt है, बेझिझक पूछिए।",
+      "en": "You're absolutely welcome! I'm happy when I can help you. If you have any other doubts, feel free to ask."
+    }
+  },
+  "goodbye": {
+    "keywords": ["bye", "goodbye", "see you", "alvida", "अलविदा", "जाता हूं"],
+    "responses": {
+      "hi": "अच्छा चलिए, JECRC में मिलेंगे! और कभी भी कोई question हो तो आ जाना। All the best for your future!",
+      "en": "Alright, see you at JECRC! Whenever you have any questions, just come back. All the best for your future!"
+    }
+  },
+  "fees": {
+    "keywords": ["fee", "fees", "फीस", "शुल्क", "payment", "पेमेंट", "cost", "खर्च", "tuition"],
+    "responses": {
+      "hi": "देखिए, JECRC की fees के बारे में मैं honest बताता हूँ:\n\nB.Tech की annual fees है ₹1,25,000। हाँ, यह government college से ज्यादा है, लेकिन value for money है। क्यों? \n\n• Faculty experienced हैं, industry से आते हैं\n• Labs modern हैं, latest equipment है\n• Placement record अच्छा है - average 4.5 LPA\n• Infrastructure top-class है\n\nPayment options:\n• Semester-wise pay कर सकते हैं\n• Education loan easily मिल जाता है\n• EMI options भी हैं\n• Scholarships भी available हैं merit के base पर\n\nसच कहूँ तो, यह investment है आपके career में। First job में ही यह amount recover हो जाएगा।",
+      "en": "Let me be honest about JECRC fees:\n\nB.Tech annual fees is ₹1,25,000. Yes, it's more than government colleges, but it's value for money. Why?\n\n• Faculty is experienced, comes from industry\n• Labs are modern with latest equipment\n• Good placement record - average 4.5 LPA\n• Top-class infrastructure\n\nPayment options:\n• You can pay semester-wise\n• Education loans are easily available\n• EMI options are there\n• Merit-based scholarships available\n\nTo be honest, this is an investment in your career. You'll recover this amount in your first job itself."
+    }
+  },
+  "admission": {
+    "keywords": ["admission", "प्रवेश", "एडमिशन", "apply", "आवेदन", "entrance", "प्रवेश परीक्षा"],
+    "responses": {
+      "hi": "Admission के बारे में पूरी inside story बताता हूँ:\n\nEligibility:\n• 12th में PCM से 75% चाहिए (SC/ST के लिए 65%)\n• JEE Main या REAP का score चाहिए\n• Age limit 25 साल है\n\nProcess step-by-step:\n1. Online apply करो jecrc.edu पर (fee ₹1000)\n2. Merit list आएगी JEE/REAP rank के हिसाब से\n3. Counseling में जाना होगा, choice filling करनी होगी\n4. Seat allot होने पर documents verify होंगे\n5. Fee pay करके seat confirm करनी होगी\n\nDocuments ready रखना:\n• 10th, 12th marksheets\n• JEE/REAP scorecard\n• Transfer certificate\n• Character certificate\n• Caste certificate (agar applicable hai)\n\nTiming (2024):\n• Applications: March-June\n• Counseling: July-August\n• Classes start: August end\n\nMeri advice: Early apply karo, documents ready rakho, aur multiple choices daal dena counseling mein.",
+      "en": "Let me give you the complete inside story about admission:\n\nEligibility:\n• Need 75% in 12th with PCM (65% for SC/ST)\n• JEE Main or REAP score required\n• Age limit is 25 years\n\nStep-by-step process:\n1. Apply online at jecrc.edu (fee ₹1000)\n2. Merit list will come based on JEE/REAP rank\n3. You'll have to attend counseling and fill choices\n4. After seat allotment, documents will be verified\n5. Pay fee to confirm your seat\n\nKeep documents ready:\n• 10th, 12th marksheets\n• JEE/REAP scorecard\n• Transfer certificate\n• Character certificate\n• Caste certificate (if applicable)\n\nTiming (2024):\n• Applications: March-June\n• Counseling: July-August\n• Classes start: End of August\n\nMy advice: Apply early, keep documents ready, and fill multiple choices in counseling."
+    }
+  },
+  "hostel": {
+    "keywords": ["hostel", "हॉस्टल", "accommodation", "room", "रूम", "stay", "रहना", "mess"],
+    "responses": {
+      "hi": "Hostel के बारे में real picture देता हूँ:\n\nFacilities:\n• Boys और Girls अलग hostels हैं\n• AC और Non-AC दोनों rooms available\n• 24/7 WiFi है (speed decent है)\n• Power backup है\n• Security guards 24/7\n• CCTV surveillance पूरे hostel में\n\nFees (annual):\n• Non-AC room: ₹80,000\n• AC room: ₹1,20,000\n• Mess charges: ₹40,000 अलग से\n• Security deposit: ₹10,000 (refundable)\n\nMess food honestly बताऊं:\n• 4 times meals - breakfast, lunch, snacks, dinner\n• North Indian food mostly, कभी South Indian भी\n• Quality decent है, home जैसा नहीं but manageable\n• Festival times पर special food\n\nRules:\n• In-time 10 PM (extend हो सकता है permission से)\n• No ragging policy strictly followed\n• Parents visitors allowed specific hours में\n• Room sharing होता है 2-3 students\n\nPro tip: AC room costly है but Rajasthan की heat में worth it है summer में।",
+      "en": "Let me give you the real picture about hostel:\n\nFacilities:\n• Separate hostels for Boys and Girls\n• Both AC and Non-AC rooms available\n• 24/7 WiFi (decent speed)\n• Power backup available\n• 24/7 security guards\n• CCTV surveillance throughout hostel\n\nFees (annual):\n• Non-AC room: ₹80,000\n• AC room: ₹1,20,000\n• Mess charges: ₹40,000 separately\n• Security deposit: ₹10,000 (refundable)\n\nAbout mess food honestly:\n• 4 times meals - breakfast, lunch, snacks, dinner\n• Mostly North Indian, sometimes South Indian\n• Quality is decent, not like home but manageable\n• Special food during festivals\n\nRules:\n• In-time 10 PM (can be extended with permission)\n• No ragging policy strictly followed\n• Parent visitors allowed during specific hours\n• Room sharing with 2-3 students\n\nPro tip: AC room is costly but worth it during Rajasthan summers."
+    }
+  },
+  "placement": {
+    "keywords": ["placement", "job", "नौकरी", "company", "campus", "प्लेसमेंट", "career", "करियर", "salary", "package"],
+    "responses": {
+      "hi": "Placement की real story बताता हूँ, कोई exaggeration नहीं:\n\n2023-24 Stats (authentic):\n• Overall placement: 85% (यह सच है)\n• Highest package: ₹25 LPA (ek-do students को mila)\n• Average package: ₹4.5 LPA (यह realistic है)\n• Median package: ₹3.8 LPA (most students यह range में)\n\nTop Companies जो आते हैं:\n• Mass recruiters: TCS, Infosys, Wipro, Accenture\n• Product companies: occasionally Amazon, Microsoft\n• Core companies: Mahindra, Bajaj, L&T\n• Startups: local और national level के\n\nBranch-wise reality:\n• CSE/IT: Best packages (4-25 LPA range)\n• ECE: Good options (3-15 LPA)\n• Mechanical: Core companies (3-8 LPA)\n• Civil: Mix of core और IT (2.5-6 LPA)\n\nPlacement preparation:\n• 6th semester से शुरू होती है\n• Aptitude, coding, communication की training\n• Mock interviews होते हैं\n• Resume building workshops\n\nSach कहूँ तो, mehnat karni padti hai. College sirf platform deta hai, बाकी आपकी skills पर depend करता है।",
+      "en": "Let me tell you the real placement story, no exaggeration:\n\n2023-24 Stats (authentic):\n• Overall placement: 85% (this is true)\n• Highest package: ₹25 LPA (1-2 students got this)\n• Average package: ₹4.5 LPA (this is realistic)\n• Median package: ₹3.8 LPA (most students in this range)\n\nTop Companies that visit:\n• Mass recruiters: TCS, Infosys, Wipro, Accenture\n• Product companies: occasionally Amazon, Microsoft\n• Core companies: Mahindra, Bajaj, L&T\n• Startups: local and national level\n\nBranch-wise reality:\n• CSE/IT: Best packages (4-25 LPA range)\n• ECE: Good options (3-15 LPA)\n• Mechanical: Core companies (3-8 LPA)\n• Civil: Mix of core and IT (2.5-6 LPA)\n\nPlacement preparation:\n• Starts from 6th semester\n• Training in aptitude, coding, communication\n• Mock interviews conducted\n• Resume building workshops\n\nTo be honest, you need to work hard. College only provides the platform, rest depends on your skills."
+    }
+  },
+  "courses": {
+    "keywords": ["course", "branch", "stream", "कोर्स", "ब्रांच", "subjects", "विषय", "engineering"],
+    "responses": {
+      "hi": "Courses के बारे में detailed बताता हूँ:\n\nEngineering (B.Tech - 4 years):\n• Computer Science Engineering (CSE) - सबसे popular, best placements\n• Information Technology (IT) - CSE के similar, slightly different curriculum\n• Electronics & Communication (ECE) - hardware+software mix\n• Mechanical Engineering - core engineering, manufacturing focus\n• Civil Engineering - construction, infrastructure\n• Electrical Engineering - power systems, electrical machines\n\nOther Courses:\n• MBA (2 years) - management degree\n• BBA (3 years) - business administration\n• B.Com (3 years) - commerce background\n\nMy honest recommendation:\n• अगर coding में interest है → CSE/IT choose करो\n• Hardware+software दोनों पसंद है → ECE\n• Core engineering और manufacturing → Mechanical\n• Construction industry → Civil\n\nCSE/IT में competition ज्यादा है but opportunities भी ज्यादा हैं। Mechanical/Civil में government jobs के chances अच्छे हैं।\n\nKya specific branch के बारे में जानना चाहते हो?",
+      "en": "Let me tell you about courses in detail:\n\nEngineering (B.Tech - 4 years):\n• Computer Science Engineering (CSE) - most popular, best placements\n• Information Technology (IT) - similar to CSE, slightly different curriculum\n• Electronics & Communication (ECE) - hardware+software mix\n• Mechanical Engineering - core engineering, manufacturing focus\n• Civil Engineering - construction, infrastructure\n• Electrical Engineering - power systems, electrical machines\n\nOther Courses:\n• MBA (2 years) - management degree\n• BBA (3 years) - business administration\n• B.Com (3 years) - commerce background\n\nMy honest recommendation:\n• If interested in coding → choose CSE/IT\n• Like both hardware+software → ECE\n• Core engineering and manufacturing → Mechanical\n• Construction industry → Civil\n\nCSE/IT has more competition but also more opportunities. Mechanical/Civil have good chances for government jobs.\n\nWhich specific branch would you like to know about?"
+    }
+  },
+  "library": {
+    "keywords": ["library", "book", "लाइब्रेरी", "किताब", "study", "पढ़ाई"],
+    "responses": {
+      "hi": "Library के बारे में सच्ची जानकारी:\n\nCollection:\n• 50,000+ books हैं (सभी branches के लिए)\n• Journals और magazines भी हैं\n• Digital library access है\n• Previous year question papers available\n• Reference books सभी subjects के\n\nTimings:\n• Monday-Saturday: 8 AM - 8 PM\n• Sunday: 10 AM - 6 PM\n• Exam time में extended hours\n\nFacilities:\n• Reading hall में 100 seats\n• Group study rooms भी हैं\n• Silent study zone अलग है\n• AC environment है\n• WiFi fast है\n• Printing facility है\n\nRules:\n• Student ID card जरूरी\n• 3 books एक साथ issue कर सकते हो\n• 15 days का period है\n• Renewal भी हो सकता है\n• Late return पर ₹2 per day fine\n\nLibrarian Dr. Sharma बहुत helpful हैं, कोई भी book चाहिए तो पूछ सकते हो।",
+      "en": "Here's the real information about the library:\n\nCollection:\n• 50,000+ books (for all branches)\n• Journals and magazines available\n• Digital library access\n• Previous year question papers available\n• Reference books for all subjects\n\nTimings:\n• Monday-Saturday: 8 AM - 8 PM\n• Sunday: 10 AM - 6 PM\n• Extended hours during exams\n\nFacilities:\n• Reading hall with 100 seats\n• Group study rooms available\n• Separate silent study zone\n• AC environment\n• Fast WiFi\n• Printing facility\n\nRules:\n• Student ID card required\n• Can issue 3 books at a time\n• 15 days period\n• Renewal possible\n• ₹2 per day fine for late return\n\nLibrarian Dr. Sharma is very helpful, you can ask for any book you need."
+    }
+  },
+  "exam": {
+    "keywords": ["exam", "परीक्षा", "test", "result", "रिजल्ट", "marks", "अंक"],
+    "responses": {
+      "hi": "Exam system के बारे में complete details:\n\nExam Pattern:\n• Mid-term exams: 30 marks (September & February)\n• End-term exams: 70 marks (December & May)\n• Practicals: 50 marks\n• Total per subject: 150 marks\n• Passing criteria: 40% minimum overall\n\nExam Format:\n• Mix of MCQ और descriptive questions\n• 3 hours duration\n• Usually 8 questions आते हैं, 5 करने होते हैं\n• No negative marking (relief!)\n\nResult Process:\n• Results 30 days में आ जाते हैं\n• Online check कर सकते हो\n• SMS alert भी आता है\n• Physical marksheet college से लेनी होती है\n\nRe-evaluation:\n• 15 days के अंदर apply कर सकते हो\n• ₹500 per subject fee\n• 20 days में result\n• अगर 10+ marks बढ़ जाते हैं तो fee refund\n\nTip: Mid-term को seriously लो, क्योंकि यह overall percentage में count होता है।",
+      "en": "Complete details about the exam system:\n\nExam Pattern:\n• Mid-term exams: 30 marks (September & February)\n• End-term exams: 70 marks (December & May)\n• Practicals: 50 marks\n• Total per subject: 150 marks\n• Passing criteria: 40% minimum overall\n\nExam Format:\n• Mix of MCQ and descriptive questions\n• 3 hours duration\n• Usually 8 questions come, have to attempt 5\n• No negative marking (relief!)\n\nResult Process:\n• Results come within 30 days\n• Can check online\n• SMS alert also comes\n• Physical marksheet has to be collected from college\n\nRe-evaluation:\n• Can apply within 15 days\n• ₹500 per subject fee\n• Result in 20 days\n• Fee refunded if marks increase by 10+\n\nTip: Take mid-terms seriously, as they count in overall percentage."
+    }
+  },
+  "contact": {
+    "keywords": ["contact", "phone", "email", "संपर्क", "address", "पता", "location"],
+    "responses": {
+      "hi": "JECRC contact करने की पूरी details:\n\nMain Campus Address:\nJECRC University\nJaipur-Ramgarh Road, Village-Ramchandrapura\nSitapura Industrial Area\nJaipur - 303905, Rajasthan\n\nPhone Numbers:\n• Main Office: +91-141-2770000 (general queries)\n• Admission Helpline: +91-141-2770009 (admission related)\n• Hostel Office: +91-141-2770015 (hostel queries)\n• Placement Cell: +91-141-2770020 (job related)\n• Library: +91-141-2770012 (books/study material)\n\nEmail IDs:\n• General: info@jecrcu.edu.in\n• Admissions: admissions@jecrcu.edu.in\n• Placements: placements@jecrcu.edu.in\n\nKaise pahunchein:\n• Jaipur bus stand से 15 km (auto/taxi available)\n• Airport से 25 km\n• Railway station से 20 km\n• City bus route 21 भी जाती है\n• College bus service भी है nearby areas से\n\nOffice hours: Monday-Saturday 9 AM - 5 PM\nAdmission season में extended hours होते हैं।",
+      "en": "Complete contact details for JECRC:\n\nMain Campus Address:\nJECRC University\nJaipur-Ramgarh Road, Village-Ramchandrapura\nSitapura Industrial Area\nJaipur - 303905, Rajasthan\n\nPhone Numbers:\n• Main Office: +91-141-2770000 (general queries)\n• Admission Helpline: +91-141-2770009 (admission related)\n• Hostel Office: +91-141-2770015 (hostel queries)\n• Placement Cell: +91-141-2770020 (job related)\n• Library: +91-141-2770012 (books/study material)\n\nEmail IDs:\n• General: info@jecrcu.edu.in\n• Admissions: admissions@jecrcu.edu.in\n• Placements: placements@jecrcu.edu.in\n\nHow to reach:\n• 15 km from Jaipur bus stand (auto/taxi available)\n• 25 km from Airport\n• 20 km from Railway station\n• City bus route 21 also goes there\n• College bus service from nearby areas\n\nOffice hours: Monday-Saturday 9 AM - 5 PM\nExtended hours during admission season."
+    }
+  },
+  "unknown": {
+    "keywords": [],
+    "responses": {
+      "hi": "Hmm, मुझे यह exact समझ नहीं आया। लेकिन कोई बात नहीं!\n\nमैं इन सब topics पर detail में बात कर सकता हूँ:\n• Fees और payment options\n• Admission process और requirements\n• Hostel facilities और life\n• Placement records और companies\n• Different courses और branches\n• Library और study facilities\n• Exam pattern और results\n• Contact information\n\nआप कोई भी topic choose कर सकते हैं या अपना question थोड़ा different way में पूछ सकते हैं। मैं help करने के लिए हूँ!",
+      "en": "Hmm, I didn't quite understand that exactly. But no worries!\n\nI can talk in detail about all these topics:\n• Fees and payment options\n• Admission process and requirements\n• Hostel facilities and life\n• Placement records and companies\n• Different courses and branches\n• Library and study facilities\n• Exam pattern and results\n• Contact information\n\nYou can choose any topic or ask your question in a slightly different way. I'm here to help!"
+    }
+  }
+}

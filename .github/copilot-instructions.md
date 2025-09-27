@@ -1,7 +1,7 @@
-# SIH 2025 Multilingual Campus Assistant - AI Coding Instructions
+# Saarthi - JECRC Chatbot - AI Coding Instructions
 
 ## Project Overview
-This is a **SIH 2025 competition project** - a multilingual chatbot for JECRC Foundation that handles campus queries in English, Hindi, and Rajasthani. Built with React + TypeScript frontend and Node.js + Express backend, with MongoDB for persistence and Socket.IO for real-time chat.
+This is a **SIH 2025 competition project** - Saarthi, a multilingual chatbot for JECRC Foundation that handles campus queries in English, Hindi, and Rajasthani. Built with React + TypeScript frontend and Node.js + Express backend, with MongoDB for persistence and Socket.IO for real-time chat.
 
 ## Key Architecture Patterns
 

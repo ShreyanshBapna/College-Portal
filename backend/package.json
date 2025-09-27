@@ -1,7 +1,7 @@
 {
   "name": "sih-multilingual-chatbot-backend",
   "version": "1.0.0",
-  "description": "Backend for SIH 2025 Multilingual Chatbot - Language Agnostic Campus Assistant",
+  "description": "Backend for Saarthi - JECRC Chatbot - Multilingual Campus Assistant",
   "main": "dist/index.js",
   "scripts": {
     "dev": "nodemon src/index.ts",

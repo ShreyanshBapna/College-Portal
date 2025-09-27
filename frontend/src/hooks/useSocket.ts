@@ -34,7 +34,7 @@ export const useSocket = (): UseSocketReturn => {
     if (!user) return;
 
     // Initialize socket connection
-    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5002';
     const socket = io(backendUrl, {
       transports: ['websocket', 'polling'],
       timeout: 30000,

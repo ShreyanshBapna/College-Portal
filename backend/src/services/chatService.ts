@@ -1,6 +1,7 @@
 import { FAQ } from '../models/FAQ';
 import { detectLanguage } from './languageService';
 import { logger } from '../utils/logger';
+import { flaskRAGService, RAGChatResponse } from './flaskRAGService';
 
 export interface ChatResponse {
   message: string;
@@ -10,6 +11,7 @@ export interface ChatResponse {
   entities: string[];
   timestamp: Date;
   source?: string;
+  ragEnabled?: boolean;
 }
 
 export async function processMessage(
@@ -21,29 +23,60 @@ export async function processMessage(
     const startTime = Date.now();
     const detectedLanguage = userLanguage || await detectLanguage(userMessage);
     const finalLanguage = detectedLanguage || 'en';
-    const normalizedMessage = normalizeMessage(userMessage);
-    const { intent, entities, confidence } = await extractIntentAndEntities(normalizedMessage, finalLanguage);
-    const matchedFAQ = await findBestResponse(normalizedMessage, intent, finalLanguage);
     
-    let response;
-    if (matchedFAQ) {
-      response = matchedFAQ.answer[finalLanguage] || matchedFAQ.answer['en'] || 'I understand your question, but I need more information to provide a specific answer.';
-    } else {
-      response = getFallbackResponse(finalLanguage, intent);
+    logger.info(`Processing message for session ${sessionId}: "${userMessage}" in language: ${finalLanguage}`);
+
+    // Try Flask RAG service first
+    try {
+      const ragResponse = await flaskRAGService.sendMessageToRAG(
+        userMessage,
+        sessionId,
+        finalLanguage
+      );
+
+      const processingTime = Date.now() - startTime;
+      logger.info(`RAG response generated in ${processingTime}ms for session: ${sessionId}`);
+      
+      return {
+        message: ragResponse.message,
+        language: ragResponse.language,
+        confidence: ragResponse.confidence,
+        intent: ragResponse.intent,
+        entities: ragResponse.entities,
+        timestamp: ragResponse.timestamp,
+        source: ragResponse.source,
+        ragEnabled: ragResponse.ragEnabled
+      };
+
+    } catch (ragError) {
+      logger.warn('RAG service failed, falling back to FAQ system:', ragError);
+      
+      // Fallback to existing FAQ system
+      const normalizedMessage = normalizeMessage(userMessage);
+      const { intent, entities, confidence } = await extractIntentAndEntities(normalizedMessage, finalLanguage);
+      const matchedFAQ = await findBestResponse(normalizedMessage, intent, finalLanguage);
+      
+      let response;
+      if (matchedFAQ) {
+        response = matchedFAQ.answer[finalLanguage] || matchedFAQ.answer['en'] || 'I understand your question, but I need more information to provide a specific answer.';
+      } else {
+        response = getFallbackResponse(finalLanguage, intent);
+      }
+      
+      const processingTime = Date.now() - startTime;
+      logger.info(`FAQ fallback response generated in ${processingTime}ms for session: ${sessionId}`);
+      
+      return {
+        message: response,
+        language: finalLanguage,
+        confidence: confidence || 0.7,
+        intent,
+        entities,
+        timestamp: new Date(),
+        source: matchedFAQ ? 'faq_database' : 'fallback',
+        ragEnabled: false
+      };
     }
-    
-    const processingTime = Date.now() - startTime;
-    logger.info(`Response generated in ${processingTime}ms for session: ${sessionId}`);
-    
-    return {
-      message: response,
-      language: finalLanguage,
-      confidence: confidence || 0.7,
-      intent,
-      entities,
-      timestamp: new Date(),
-      source: matchedFAQ ? 'faq_database' : 'fallback'
-    };
 
   } catch (error: any) {
     logger.error('Chat processing error:', error);
@@ -54,7 +87,8 @@ export async function processMessage(
       intent: 'error',
       entities: [],
       timestamp: new Date(),
-      source: 'error_handler'
+      source: 'error_handler',
+      ragEnabled: false
     };
   }
 }

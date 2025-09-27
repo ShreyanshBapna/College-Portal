@@ -118,7 +118,7 @@ const LoadingScreen: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.8 }}
         >
-          Multilingual Campus Assistant
+          Saarthi - JECRC Chatbot
         </motion.h2>
 
         {/* Feature icons */}
@@ -159,7 +159,7 @@ const LoadingScreen: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.1, duration: 0.6 }}
         >
-          Initializing AI Assistant...
+          Initializing Saarthi...
         </motion.p>
 
         {/* Progress bar */}

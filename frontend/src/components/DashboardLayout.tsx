@@ -55,7 +55,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
     const commonItems = [
       { id: 'overview', label: 'Overview', icon: Home },
       { id: 'calendar', label: 'Calendar', icon: Calendar },
-      { id: 'chat', label: 'AI Assistant', icon: MessageCircle },
+      { id: 'chat', label: 'Saarthi', icon: MessageCircle },
     ];
 
     const roleSpecificItems = {
@@ -211,7 +211,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
                   )}
                   <div className="min-w-0">
                     <h1 className="text-xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent capitalize truncate">
-                      {activeSection === 'chat' ? 'AI Assistant' : activeSection}
+                      {activeSection === 'chat' ? 'Saarthi - JECRC Chatbot' : activeSection}
                     </h1>
                   </div>
                 </div>

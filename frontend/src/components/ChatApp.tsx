@@ -21,7 +21,7 @@ const ChatApp: React.FC<ChatAppProps> = () => {
 
   const getWelcomeMessage = (language: Language): string => {
     const welcomeMessages = {
-      en: "Hello! I'm your multilingual campus assistant for JECRC Foundation. How can I help you today?",
+      en: "Hello! I'm Saarthi, your JECRC Chatbot for campus assistance. How can I help you today?",
       hi: "नमस्ते! मैं JECRC Foundation का आपका बहुभाषी कैंपस सहायक हूं। आज मैं आपकी कैसे मदद कर सकता हूं?",
       raj: "नमस्कार! म्हैं JECRC Foundation को थारो बहुभाषी कैंपस सहायक हूं। आज म्हैं थारी कैसे मदद कर सकूं?"
     };
@@ -42,7 +42,7 @@ const ChatApp: React.FC<ChatAppProps> = () => {
       const session = await chatApi.createSession(currentLanguage);
       setSessionId(session.sessionId);
 
-      const newSocket = io(process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000', {
+      const newSocket = io(process.env.REACT_APP_BACKEND_URL || 'http://localhost:5002', {
         reconnection: true,
         reconnectionAttempts: 5,
         reconnectionDelay: 1000,
@@ -68,7 +68,7 @@ const ChatApp: React.FC<ChatAppProps> = () => {
           language: currentLanguage
         };
         setMessages([welcomeMessage]);
-        toast.success('Connected to chat server');
+        // Removed connection success toast to reduce UI noise
       });
 
       newSocket.on('disconnect', (reason) => {
@@ -83,13 +83,13 @@ const ChatApp: React.FC<ChatAppProps> = () => {
       newSocket.on('connect_error', (error) => {
         console.error('Connection error:', error);
         setIsConnected(false);
-        toast.error('Connection failed. Retrying...');
+        // Removed repetitive connection error toasts to reduce UI noise
       });
 
       newSocket.on('reconnect', (attemptNumber) => {
         console.log('🔄 Reconnected after', attemptNumber, 'attempts');
         setIsConnected(true);
-        toast.success('Reconnected to chat server');
+        // Removed reconnection toast to reduce UI noise - console log sufficient
       });
 
       newSocket.on('reconnect_error', (error) => {
@@ -120,7 +120,7 @@ const ChatApp: React.FC<ChatAppProps> = () => {
       toast.error('Failed to initialize chat. Please refresh the page.');
       console.error('Chat initialization error:', error);
     }
-  }, [currentLanguage]);
+  }, []); // Remove currentLanguage dependency to prevent recreation
 
   useEffect(() => {
     initializeChat();
@@ -132,7 +132,7 @@ const ChatApp: React.FC<ChatAppProps> = () => {
         setSocket(null);
       }
     };
-  }, [currentLanguage, initializeChat, socket]); // Added missing dependencies
+  }, [initializeChat]); // Only run when initializeChat changes (which it shouldn't now)
 
   const sendMessage = async (content: string) => {
     if (!content.trim() || !sessionId) return;
@@ -190,10 +190,29 @@ const ChatApp: React.FC<ChatAppProps> = () => {
 
     setMessages(prev => [...prev, languageChangeMessage]);
 
-    if (socket) {
-      socket.disconnect();
+    // Create new session for the new language but don't reinitialize socket
+    try {
+      const session = await chatApi.createSession(newLanguage);
+      setSessionId(session.sessionId);
+      
+      // If socket exists, just update the session
+      if (socket && isConnected) {
+        socket.emit('join_chat', { sessionId: session.sessionId });
+      }
+      
+      // Add welcome message in new language
+      const welcomeMessage: Message = {
+        id: 'welcome-new-lang',
+        content: getWelcomeMessage(newLanguage),
+        sender: 'bot',
+        timestamp: new Date(),
+        language: newLanguage
+      };
+      setMessages(prev => [...prev, welcomeMessage]);
+    } catch (error) {
+      console.error('Failed to change language:', error);
+      toast.error('Failed to switch language. Please try again.');
     }
-    await initializeChat();
   };
 
   const handleClearChat = () => {
