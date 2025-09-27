@@ -1,5 +1,25 @@
+/* Global reset to remove default margins and avoid left-side whitespace */
+:root, html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #f9fafb;
+}
+
+/* Ensure sizing includes borders/padding to avoid overflow by rounding issues */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  text-align: left;
+  min-height: 100vh;
+  background-color: #f9fafb;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .App-logo {

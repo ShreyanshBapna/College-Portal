@@ -26,10 +26,11 @@ export const errorHandler = (
   }
 
   // Mongoose duplicate key
-  if (err.name === 'MongoError' && (err as any).code === 11000) {
-    const message = 'Duplicate field value entered';
+  if (err.name === 'MongoError' || err.name === 'MongoServerError' || (err as any).code === 11000) {
+    const field = Object.keys((err as any).keyPattern || {})[0] || 'field';
+    const message = `${field.charAt(0).toUpperCase() + field.slice(1)} already exists`;
     error = new Error(message) as CustomError;
-    error.statusCode = 400;
+    error.statusCode = 409; // Changed to 409 Conflict
   }
 
   // Mongoose validation error
@@ -55,7 +56,7 @@ export const errorHandler = (
   res.status(error.statusCode || 500).json({
     success: false,
     error: error.message || 'Server Error',
-    ...(process.env.NODE_ENV === 'development' && { stack: err.stack })
+    ...(process.env.NODE_ENV === 'development' && { stack: err.stack, details: err })
   });
 };
 

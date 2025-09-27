@@ -6,11 +6,9 @@ import {
   Users, 
   GraduationCap, 
   UserCheck,
-  Building,
   Globe,
   AlertCircle,
-  Info,
-  CheckCircle
+  Info
 } from 'lucide-react';
 import { useSocket } from '../hooks/useSocket';
 

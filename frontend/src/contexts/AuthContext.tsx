@@ -131,15 +131,20 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email: email?.trim(), password }),
       });
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.message || 'Login failed');
+        throw new Error(errorData.error || errorData.message || `Login failed (${response.status})`);
       }
 
       const data = await response.json();
+      
+      if (!data.token || !data.user) {
+        throw new Error('Invalid response from server');
+      }
+      
       setToken(data.token);
       setUser(data.user);
       
@@ -147,25 +152,62 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       localStorage.setItem('user', JSON.stringify(data.user));
     } catch (error) {
       console.error('Login error:', error);
-      throw error;
+      if (error instanceof Error) {
+        throw error;
+      } else {
+        throw new Error('An unexpected error occurred during login');
+      }
     }
   };
 
   const register = async (userData: RegisterData) => {
     try {
-      // Transform the data to match backend schema
+      // Transform the data to match backend schema exactly
       const { firstName, lastName, phoneNumber, dateOfBirth, address, ...rest } = userData;
       
       const transformedData = {
         ...rest,
         profile: {
-          firstName,
-          lastName,
-          phone: phoneNumber,
-          dateOfBirth: dateOfBirth ? new Date(dateOfBirth) : undefined,
-          address: address ? `${address.street}, ${address.city}, ${address.state} - ${address.pincode}` : undefined
-        }
+          firstName: firstName?.trim() || '',
+          lastName: lastName?.trim() || '',
+          phone: phoneNumber?.trim() || '',
+          dateOfBirth: dateOfBirth ? new Date(dateOfBirth).toISOString() : undefined,
+          address: address && (address.street || address.city || address.state || address.pincode) 
+            ? `${address.street || ''}, ${address.city || ''}, ${address.state || ''} ${address.pincode || ''}`.trim().replace(/^,\s*|,\s*$/g, '')
+            : undefined
+        },
+        // Ensure role-specific details are properly formatted
+        ...(rest.studentDetails && {
+          studentDetails: {
+            ...rest.studentDetails,
+            rollNumber: rest.studentDetails.rollNumber?.trim() || '',
+            class: rest.studentDetails.class?.trim() || '',
+            section: rest.studentDetails.section?.trim() || '',
+            department: rest.studentDetails.department?.trim() || '',
+            semester: Number(rest.studentDetails.semester) || 1,
+            admissionYear: Number(rest.studentDetails.admissionYear) || new Date().getFullYear()
+          }
+        }),
+        ...(rest.teacherDetails && {
+          teacherDetails: {
+            ...rest.teacherDetails,
+            employeeId: rest.teacherDetails.employeeId?.trim() || '',
+            department: rest.teacherDetails.department?.trim() || '',
+            designation: rest.teacherDetails.designation?.trim() || '',
+            subjects: Array.isArray(rest.teacherDetails.subjects) ? rest.teacherDetails.subjects : [],
+            experience: Number(rest.teacherDetails.experience) || 0
+          }
+        }),
+        ...(rest.principalDetails && {
+          principalDetails: {
+            ...rest.principalDetails,
+            employeeId: rest.principalDetails.employeeId?.trim() || '',
+            qualification: Array.isArray(rest.principalDetails.qualification) ? rest.principalDetails.qualification : []
+          }
+        })
       };
+
+      console.log('Sending registration data:', transformedData);
 
       const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/user-auth/register`, {
         method: 'POST',
@@ -177,10 +219,15 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.message || 'Registration failed');
+        throw new Error(errorData.error || errorData.message || `Registration failed (${response.status})`);
       }
 
       const data = await response.json();
+      
+      if (!data.token || !data.user) {
+        throw new Error('Invalid response from server');
+      }
+      
       setToken(data.token);
       setUser(data.user);
       
@@ -188,7 +235,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       localStorage.setItem('user', JSON.stringify(data.user));
     } catch (error) {
       console.error('Registration error:', error);
-      throw error;
+      if (error instanceof Error) {
+        throw error;
+      } else {
+        throw new Error('An unexpected error occurred during registration');
+      }
     }
   };
 

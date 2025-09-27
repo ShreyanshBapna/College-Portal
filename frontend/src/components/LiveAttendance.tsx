@@ -6,10 +6,7 @@ import {
   XCircle, 
   Clock, 
   Search,
-  Filter,
-  Save,
-  Calendar,
-  BookOpen
+  Save
 } from 'lucide-react';
 import { useSocket } from '../hooks/useSocket';
 

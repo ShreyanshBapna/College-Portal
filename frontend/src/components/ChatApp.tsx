@@ -132,7 +132,7 @@ const ChatApp: React.FC<ChatAppProps> = () => {
         setSocket(null);
       }
     };
-  }, [currentLanguage]); // Only re-initialize when language changes
+  }, [currentLanguage, initializeChat, socket]); // Added missing dependencies
 
   const sendMessage = async (content: string) => {
     if (!content.trim() || !sessionId) return;
@@ -209,12 +209,7 @@ const ChatApp: React.FC<ChatAppProps> = () => {
   };
 
   return (
-    <motion.div 
-      className="flex flex-col h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50 relative overflow-hidden"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-    >
+    <div className="h-full bg-gradient-to-br from-indigo-50 via-white to-cyan-50 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -336,7 +331,7 @@ const ChatApp: React.FC<ChatAppProps> = () => {
           />
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

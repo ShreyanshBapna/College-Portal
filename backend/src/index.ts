@@ -12,12 +12,12 @@ import { errorHandler } from './middleware/errorHandler';
 import { logger } from './utils/logger';
 
 // Route imports
-import authRoutes from './routes/auth';
 import chatRoutes from './routes/chat';
 import adminRoutes from './routes/admin';
 import analyticsRoutes from './routes/analytics';
-import authRoutesNew from './routes/authRoutes';
+import authRoutes from './routes/authRoutes';
 import dashboardRoutes from './routes/dashboardRoutes';
+import profileRoutes from './routes/profile';
 
 // Load environment variables
 dotenv.config();
@@ -77,12 +77,12 @@ app.get('/health', (req, res) => {
 });
 
 // API Routes
-app.use('/api/auth', authRoutes);
+app.use('/api/user-auth', authRoutes);
 app.use('/api/chat', chatRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/analytics', analyticsRoutes);
-app.use('/api/user-auth', authRoutesNew);
 app.use('/api/dashboard', dashboardRoutes);
+app.use('/api/profile', profileRoutes);
 
 // Socket.IO for real-time chat with enhanced connection handling
 io.on('connection', (socket) => {
